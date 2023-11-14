@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Ammo_Box_Behaviour : MonoBehaviour
 {
-    //This script is not detecing the player for some reason???
+
+
+    //Somehow add a clip to the different guns based on which ammo box is picked up;
     private void OnTriggerEnter(Collider Collider)
     {
         Debug.Log("You are inside the ammo box");
@@ -12,6 +14,7 @@ public class Ammo_Box_Behaviour : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("IT WORKED!!!");
+            
         }
     }
 }

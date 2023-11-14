@@ -1028,7 +1028,7 @@ MonoBehaviour:
   Turn_Speed: 4.5
   Patrol_Radius: 35
   Chase_Radius: 10
-  Obstacle_Distance: 5
+  Obstacle_Distance: 20
 --- !u!114 &-6063615679903728236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,6 +1045,7 @@ MonoBehaviour:
   Zombie_Knockback_Force: 2
   Red_Flash_Time: 0.5
   Zombie_Rigid_Body: {fileID: 4261532949585580487}
+  Zombie_Spawning_Script: {fileID: 0}
 --- !u!1 &8067626820384512222
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,10 +42,15 @@ public class Gun_Script : MonoBehaviour
     public float Zoom_FOV = 40f;
 
     public Vector3 Recoil_Position = new Vector3(0f, 0f, -0.2f);
+    public Vector3 Camera_Recoil_Position = new Vector3(0f, 0.15f, -0.2f);
     public Vector3 Original_Gun_Position;
+
+    public Vector3 Original_Camera_Recoil_Position;
 
     public TextMeshProUGUI Gun_Ammo_Text;
     public GameObject Gun_Reloading_Text;
+
+    private bool Is_Zoom_Enabled;
 
     Player_Locomotion Player_Locomotion_Script;
     Weapon_Switch_Interface_Script Weapon_Interface_Script;
@@ -145,7 +150,6 @@ public class Gun_Script : MonoBehaviour
 
         if (Reload_Script.Current_Bullet_Amount_In_Clip <= 0)
         {
-            //STOP GUN FROM DOING ANYTHING!!!
             Debug.Log("NO AMMO!!!");
             Gun_Ammo_Text.text = "x 0";
             Gun_Ammo_Text.color = Color.red;
@@ -231,6 +235,8 @@ public class Gun_Script : MonoBehaviour
         Player_Locomotion_Script.Speed = 1f;
         Player_Locomotion_Script.Sprint_Speed = 1f;
 
+        Is_Zoom_Enabled = true;
+
         if (Weapon_Interface_Script.Selected_Weapon == 0 && !Is_Reloading)
         {
             Pistol_Cross_Hair.SetActive(true);
@@ -260,6 +266,8 @@ public class Gun_Script : MonoBehaviour
         Pistol_Cross_Hair.SetActive(false);
         MP5_Cross_Hair.SetActive(false);
         Shotgun_Cross_Hair.SetActive(false);
+        
+        Is_Zoom_Enabled = false;
 
         HUD_Cross_Hair.SetActive(true);
 
@@ -271,16 +279,33 @@ public class Gun_Script : MonoBehaviour
 
     IEnumerator Add_Recoil()
     {
-        // Move the gun back
-        transform.localPosition = Original_Gun_Position;
+        if (Is_Zoom_Enabled == true)
+        {
+            Player_Camera.transform.localPosition = Original_Camera_Recoil_Position;
+            Player_Camera.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-        // Apply recoil position
-        transform.localPosition += Recoil_Position;
+            Player_Camera.transform.localPosition += Camera_Recoil_Position;
 
-        // Wait for a short duration
-        yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f);
 
-        // Reset the gun position
-        transform.localPosition = Original_Gun_Position;
+            Player_Camera.transform.localPosition = Original_Camera_Recoil_Position;
+            Player_Camera.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+        }
+
+        else
+        {
+            // Move the gun back
+            transform.localPosition = Original_Gun_Position;
+
+            // Apply recoil position
+            transform.localPosition += Recoil_Position;
+
+            // Wait for a short duration
+            yield return new WaitForSeconds(0.1f);
+
+            // Reset the gun position
+            transform.localPosition = Original_Gun_Position;
+        }
     }
 }
