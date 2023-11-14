@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using TMPro;
 
 public class Weapon_Reload_Script : MonoBehaviour
 {
@@ -15,9 +16,14 @@ public class Weapon_Reload_Script : MonoBehaviour
     //The current ammo count.
     public int Current_Bullet_Amount_In_Clip;
 
+    public TextMeshProUGUI Gun_Clip_Ammo_Text;
+
+    public Gun_Script Gun_Script;
+
     private void Start()
     {
         Current_Clip_Amount = Weapon_Clips_Available;
+        Gun_Clip_Ammo_Text.text = "x " + Current_Clip_Amount.ToString();
         Current_Bullet_Amount_In_Clip = Bullets_Per_Ammo_Clip;
     }
 
@@ -35,6 +41,8 @@ public class Weapon_Reload_Script : MonoBehaviour
         {
 
             Current_Clip_Amount -= 1;
+            Gun_Clip_Ammo_Text.text = "x " + Current_Clip_Amount.ToString();
+            Gun_Clip_Ammo_Text.color = Color.white;
             Current_Bullet_Amount_In_Clip = Bullets_Per_Ammo_Clip;
 
             Debug.Log("Reloaded. Clips: " + Current_Clip_Amount + " Ammo in clip: " + Current_Bullet_Amount_In_Clip);
@@ -43,6 +51,8 @@ public class Weapon_Reload_Script : MonoBehaviour
 
         else
         {
+            Gun_Clip_Ammo_Text.text = "x 0";
+            Gun_Clip_Ammo_Text.color = Color.red;
             Debug.Log("No need to reload or your out of clips.");
         }
     }

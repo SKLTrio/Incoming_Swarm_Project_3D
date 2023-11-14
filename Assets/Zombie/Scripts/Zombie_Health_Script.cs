@@ -9,22 +9,12 @@ public class Zombie_Health_Script : MonoBehaviour
 
     public Rigidbody Zombie_Rigid_Body;
 
-    //public Renderer Zombie_Head_Renderer;
-    //public Renderer Zombie_Body_Renderer;
-
-    //private Color Original_Zombie_Color_Head;
-    //private Color Original_Zombie_Color_Body;
-
+    public Zombie_Spawning Zombie_Spawning_Script;
 
     private void Start()
     {
+        Zombie_Spawning_Script = FindObjectOfType<Zombie_Spawning>();
         Zombie_Rigid_Body = GetComponent<Rigidbody>();
-
-        //Zombie_Head_Renderer = GetComponent<Renderer>();
-        //Zombie_Body_Renderer = GetComponent<Renderer>();
-
-        //Original_Zombie_Color_Head = Zombie_Head_Renderer.material.color;
-        //Original_Zombie_Color_Body = Zombie_Body_Renderer.material.color;
     }
 
     public void Take_Damage(float Damage)
@@ -40,18 +30,6 @@ public class Zombie_Health_Script : MonoBehaviour
 
     }
 
-    //IEnumerator Flash_Red()
-    //{
-        //Zombie_Head_Renderer.material.color = Color.red;
-        //Zombie_Body_Renderer.material.color = Color.red;
-
-        //yield return new WaitForSeconds(Red_Flash_Time);
-
-        //Zombie_Head_Renderer.material.color = Original_Zombie_Color_Head;
-        //Zombie_Body_Renderer.material.color = Original_Zombie_Color_Body;
-
-    //}
-
     void Zombie_Death()
     {
         Collider Zombie_Collider = GetComponent<Collider>();
@@ -62,6 +40,7 @@ public class Zombie_Health_Script : MonoBehaviour
         }
 
         Destroy(gameObject);
+        Zombie_Spawning_Script.Zombie_Count -= 1;
     }
 
 }

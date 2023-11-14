@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using UnityEditor.PackageManager;
+using TMPro;
 
 public class Gun_Script : MonoBehaviour
 {
@@ -41,6 +41,12 @@ public class Gun_Script : MonoBehaviour
     public float Normal_FOV = 60f;
     public float Zoom_FOV = 40f;
 
+    public Vector3 Recoil_Position = new Vector3(0f, 0f, -0.2f);
+    public Vector3 Original_Gun_Position;
+
+    public TextMeshProUGUI Gun_Ammo_Text;
+    public GameObject Gun_Reloading_Text;
+
     Player_Locomotion Player_Locomotion_Script;
     Weapon_Switch_Interface_Script Weapon_Interface_Script;
     Weapon_Reload_Script Reload_Script;
@@ -65,10 +71,12 @@ public class Gun_Script : MonoBehaviour
         Reload_Script = FindObjectOfType<Weapon_Reload_Script>();
 
         Camera_Transform = Camera.main.transform;
+        Original_Gun_Position = transform.localPosition;
         Current_Ammo = Max_Ammo;
         Pistol_Cross_Hair.SetActive(false);
         MP5_Cross_Hair.SetActive(false);
         Shotgun_Cross_Hair.SetActive(false);
+        Gun_Reloading_Text.SetActive(false);
 
     }
 
@@ -104,6 +112,8 @@ public class Gun_Script : MonoBehaviour
 
         Debug.Log("Reloading!");
 
+        Gun_Reloading_Text.SetActive(true);
+
         animator.SetBool("Reloading", true);
 
         yield return new WaitForSeconds(Reload_Time - 0.25f);
@@ -112,19 +122,33 @@ public class Gun_Script : MonoBehaviour
 
         animator.SetBool("Reloading", false);
 
+        Gun_Reloading_Text.SetActive(false);
+
         yield return new WaitForSeconds(0.25f);
 
         Current_Ammo = Max_Ammo;
+        Gun_Ammo_Text.text = "x " + Current_Ammo.ToString();
+        Gun_Ammo_Text.color = Color.white;
 
         Is_Reloading = false;
+
+        if (Reload_Script.Current_Bullet_Amount_In_Clip <= 0)
+        {
+            Gun_Ammo_Text.text = "x 0";
+            Gun_Ammo_Text.color = Color.red;
+        }
+
     }
 
     public void Shoot()
     {
+
         if (Reload_Script.Current_Bullet_Amount_In_Clip <= 0)
         {
             //STOP GUN FROM DOING ANYTHING!!!
             Debug.Log("NO AMMO!!!");
+            Gun_Ammo_Text.text = "x 0";
+            Gun_Ammo_Text.color = Color.red;
             return;
         }
 
@@ -136,8 +160,12 @@ public class Gun_Script : MonoBehaviour
 
         Current_Ammo--;
         Reload_Script.Current_Bullet_Amount_In_Clip--;
+        Gun_Ammo_Text.color = Color.white;
+        Gun_Ammo_Text.text = "x " + Current_Ammo.ToString();
 
         Camera_Transform = Camera.main.transform;
+
+        StartCoroutine(Add_Recoil());
 
         if (Physics.Raycast(Ray_Start_Point, Camera_Transform.forward, out Hit_Info, Range - 1.5f))
         {
@@ -199,7 +227,7 @@ public class Gun_Script : MonoBehaviour
         Player_Camera.fieldOfView = Zoom_FOV;
         HUD_Cross_Hair.SetActive(false);
 
-        Player_Locomotion_Script.Mouse_Sensitivity = 0.015f;
+        Player_Locomotion_Script.Mouse_Sensitivity = 0.01f;
         Player_Locomotion_Script.Speed = 1f;
         Player_Locomotion_Script.Sprint_Speed = 1f;
 
@@ -239,5 +267,20 @@ public class Gun_Script : MonoBehaviour
         Player_Locomotion_Script.Speed = 8f;
         Player_Locomotion_Script.Sprint_Speed = 15f;
 
+    }
+
+    IEnumerator Add_Recoil()
+    {
+        // Move the gun back
+        transform.localPosition = Original_Gun_Position;
+
+        // Apply recoil position
+        transform.localPosition += Recoil_Position;
+
+        // Wait for a short duration
+        yield return new WaitForSeconds(0.1f);
+
+        // Reset the gun position
+        transform.localPosition = Original_Gun_Position;
     }
 }
