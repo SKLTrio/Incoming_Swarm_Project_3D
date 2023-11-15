@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 2840129360974258807}
   - component: {fileID: 8877242968963268920}
   - component: {fileID: -4276595985907269679}
+  - component: {fileID: -3446360459555994362}
   m_Layer: 0
   m_Name: Zombie_Type_#3
   m_TagString: Zombie
@@ -743,6 +744,21 @@ MonoBehaviour:
   Red_Flash_Time: 0.5
   Zombie_Rigid_Body: {fileID: 6153663958372788515}
   Zombie_Spawning_Script: {fileID: 0}
+--- !u!114 &-3446360459555994362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977827178459695531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c893e3b76f3d572439d55f05414bd277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Zombie_Strength: 2
+  Zombie_Attack_Distance: 2
+  Zombie_Attack_Cooldown_Speed: 2
 --- !u!1 &5722098857145785018
 GameObject:
   m_ObjectHideFlags: 0

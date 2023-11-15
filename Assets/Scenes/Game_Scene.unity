@@ -2202,12 +2202,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc465d877e9dc7346afc2bb4522df75d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon_Clips_Available: 1
+  Weapon_Clips_Available: 5
   Bullets_Per_Ammo_Clip: 10
   Current_Clip_Amount: 0
   Current_Bullet_Amount_In_Clip: 0
   Gun_Clip_Ammo_Text: {fileID: 1453843641}
-  Gun_Script: {fileID: 0}
+  Gun_Script: {fileID: 194412407}
 --- !u!1 &203237856
 GameObject:
   m_ObjectHideFlags: 0
@@ -20108,12 +20108,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc465d877e9dc7346afc2bb4522df75d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon_Clips_Available: 1
+  Weapon_Clips_Available: 5
   Bullets_Per_Ammo_Clip: 35
   Current_Clip_Amount: 0
   Current_Bullet_Amount_In_Clip: 0
   Gun_Clip_Ammo_Text: {fileID: 1535946082}
-  Gun_Script: {fileID: 0}
+  Gun_Script: {fileID: 1203089317}
+--- !u!114 &1203089317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5948583064700985571, guid: 8866d5e27f5dd8044bcae633a969119e, type: 3}
+  m_PrefabInstance: {fileID: 925131782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203089310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f591b9bfd90ad3540a41c5c35d2f8edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1206030972
 GameObject:
   m_ObjectHideFlags: 0
@@ -20994,21 +21005,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 445917164348695723, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 37.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 445917164348695723, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 580179964938309578, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 953737865944742885, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 960831032521573596, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
       propertyPath: m_Pivot.x
@@ -21090,55 +21089,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3048852253259557461, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 4063755479062870298, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4164664545262161149, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001155618390054535, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 4063755479062870298, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5391234481785485535, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5439892705518156066, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 37.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5439892705518156066, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6108076090992300160, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6716447813789424288, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 37.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6716447813789424288, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8203449105820780375, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 300.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8203449105820780375, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -180
+    - target: {fileID: 8585800041670034330, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+--- !u!114 &1273786040 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4717044448268176006, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+  m_PrefabInstance: {fileID: 1273786039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1276832787
 GameObject:
   m_ObjectHideFlags: 0
@@ -26513,6 +26491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1722952587}
   - component: {fileID: 1722952589}
+  - component: {fileID: 1722952592}
   - component: {fileID: 1722952590}
   - component: {fileID: 1722952588}
   - component: {fileID: 1722952591}
@@ -26704,49 +26683,48 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 88c2f7ce-f1bb-4f71-a7fb-4fc4155352a6
     m_ActionName: 'Gameplay/Zoom[/Mouse/rightButton]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 194412408}
-        m_TargetAssemblyTypeName: Weapon_Reload_Script, Assembly-CSharp
-        m_MethodName: On_Reload
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: dbe32d6a-5a78-494a-97dd-a6bc883d09f8
-    m_ActionName: 'Gameplay/Reload[/Keyboard/r]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!95 &1722952591
-Animator:
-  serializedVersion: 7
+--- !u!114 &1722952591
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722952586}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5618b963b223f6043949ae2232578497, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb4f8036f7ffbb43a08ddd6b2fc0dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Max_Health: 100
+  Min_Health: 0
+  Health: 0
+  Health_Slider: {fileID: 1273786040}
+--- !u!65 &1722952592
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722952586}
+  m_Material: {fileID: 13400000, guid: ee0c1649ecf166d4a90d283d3fb7479a, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 2, z: 0.75}
+  m_Center: {x: 0, y: -1.25, z: 0}
 --- !u!1 &1727160387
 GameObject:
   m_ObjectHideFlags: 0
@@ -30704,7 +30682,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1974166542}
-  - component: {fileID: 1974166543}
   m_Layer: 0
   m_Name: Player_Model
   m_TagString: Player
@@ -30735,27 +30712,6 @@ Transform:
   - {fileID: 706917359}
   m_Father: {fileID: 1722952587}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!65 &1974166543
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974166541}
-  m_Material: {fileID: 13400000, guid: ee0c1649ecf166d4a90d283d3fb7479a, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5, y: 2, z: 0.75}
-  m_Center: {x: 0, y: -1.25, z: 0}
 --- !u!1001 &1978673019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32108,12 +32064,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc465d877e9dc7346afc2bb4522df75d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon_Clips_Available: 1
+  Weapon_Clips_Available: 5
   Bullets_Per_Ammo_Clip: 2
   Current_Clip_Amount: 0
   Current_Bullet_Amount_In_Clip: 0
   Gun_Clip_Ammo_Text: {fileID: 1495468545}
-  Gun_Script: {fileID: 0}
+  Gun_Script: {fileID: 2109153557}
+--- !u!114 &2109153557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2555602921505383941, guid: 8866d5e27f5dd8044bcae633a969119e, type: 3}
+  m_PrefabInstance: {fileID: 925131782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109153550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f591b9bfd90ad3540a41c5c35d2f8edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2110022971
 PrefabInstance:
   m_ObjectHideFlags: 0

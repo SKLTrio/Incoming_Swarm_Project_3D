@@ -35,6 +35,8 @@ public class Weapon_Reload_Script : MonoBehaviour
         }
     }
 
+    //The relaoding system fully works, only if the user doesnt run out of bullets before picking up ammoboxes.
+    //Ammo boxes also give clips Randomly.
     public void Reload_Gun()
     {
         if (Current_Clip_Amount > 0 && Current_Bullet_Amount_In_Clip < Bullets_Per_Ammo_Clip)
@@ -49,7 +51,7 @@ public class Weapon_Reload_Script : MonoBehaviour
 
         }
 
-        else
+        else if (Current_Clip_Amount <= 0)
         {
             Gun_Clip_Ammo_Text.text = "x 0";
             Gun_Clip_Ammo_Text.color = Color.red;
