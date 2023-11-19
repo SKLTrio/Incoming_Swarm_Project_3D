@@ -114,7 +114,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1215969560836160930}
-  - component: {fileID: 2043705336810542644}
+  - component: {fileID: 8104131529270577856}
+  - component: {fileID: 3913559012932049700}
   - component: {fileID: 7887952129629338634}
   m_Layer: 0
   m_Name: Pistol
@@ -141,7 +142,7 @@ Transform:
   - {fileID: 5368863557632967935}
   m_Father: {fileID: 27411327136855627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2043705336810542644
+--- !u!114 &8104131529270577856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,20 +151,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 82144974141240799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f591b9bfd90ad3540a41c5c35d2f8edc, type: 3}
+  m_Script: {fileID: 11500000, guid: cc930de629d55ef40878d013598c0074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 15
+  Damage: 45
   Range: 100
   Impact_Force: 30
   Fire_Rate: 1
   Max_Ammo: 10
-  Reload_Time: 3
-  Muzzle_Flash: {fileID: 3542814300218035852}
-  animator: {fileID: 7887952129629338634}
+  Reload_Time: 2
+  Camera_Transform: {fileID: 0}
+  Muzzle_Flash: {fileID: 0}
+  animator: {fileID: 0}
   Ammo_Sprite_Object: {fileID: 0}
-  Bullet_Sprite_Objects: []
-  Has_Ammo: 1
+  Has_Ammo: 0
+  Player_Camera: {fileID: 0}
+  HUD_Cross_Hair: {fileID: 0}
+  Pistol_Cross_Hair: {fileID: 0}
+  Normal_FOV: 60
+  Zoom_FOV: 40
+  Recoil_Position: {x: 0, y: 0, z: -0.2}
+  Camera_Recoil_Position: {x: 0, y: 0.15, z: -0.2}
+  Original_Gun_Position: {x: 0, y: 0, z: 0}
+  Original_Camera_Recoil_Position: {x: 0, y: 0, z: 0}
+  Gun_Ammo_Text: {fileID: 0}
+  Gun_Reloading_Text: {fileID: 0}
+--- !u!114 &3913559012932049700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82144974141240799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16c1825640484d4d91b7b2004812b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Weapon_Clips_Available: 0
+  Bullets_Per_Ammo_Clip: 0
+  Current_Clip_Amount: 0
+  Current_Bullet_Amount_In_Clip: 0
+  Gun_Clip_Ammo_Text: {fileID: 0}
 --- !u!95 &7887952129629338634
 Animator:
   serializedVersion: 7
@@ -3320,7 +3349,6 @@ GameObject:
   - component: {fileID: 5731827176996725643}
   - component: {fileID: 4672295433370746919}
   - component: {fileID: 321304477897979398}
-  - component: {fileID: 2300048136169696565}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -3388,21 +3416,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2300048136169696565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2540502041325043065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398d1cd0340e6d94f974c5c696641d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 15
-  Swing_Cooldown: 1
-  animator: {fileID: 321304477897979398}
 --- !u!1 &2594393299125097666
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,7 +3530,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6847014648751424143}
-  - component: {fileID: 2555602921505383941}
+  - component: {fileID: 4836373604666177596}
+  - component: {fileID: 1909391270622267999}
   - component: {fileID: 6335043799291381069}
   m_Layer: 0
   m_Name: Shotgun
@@ -3544,7 +3558,7 @@ Transform:
   - {fileID: 5968929518287468141}
   m_Father: {fileID: 27411327136855627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2555602921505383941
+--- !u!114 &4836373604666177596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3553,20 +3567,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 2627914615668722091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f591b9bfd90ad3540a41c5c35d2f8edc, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ff49be03fd6eb649a4f477dc6eb2758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 45
-  Range: 50
-  Impact_Force: 65
-  Fire_Rate: 0.5
-  Max_Ammo: 2
+  Damage: 0
+  Range: 100
+  Impact_Force: 30
+  Fire_Rate: 15
+  Max_Ammo: 0
   Reload_Time: 3
-  Muzzle_Flash: {fileID: 7549944798760164101}
-  animator: {fileID: 6335043799291381069}
+  Camera_Transform: {fileID: 0}
+  Muzzle_Flash: {fileID: 0}
+  animator: {fileID: 0}
   Ammo_Sprite_Object: {fileID: 0}
-  Bullet_Sprite_Objects: []
   Has_Ammo: 0
+  Player_Camera: {fileID: 0}
+  HUD_Cross_Hair: {fileID: 0}
+  Shotgun_Cross_Hair: {fileID: 0}
+  Normal_FOV: 60
+  Zoom_FOV: 40
+  Recoil_Position: {x: 0, y: 0, z: -0.2}
+  Camera_Recoil_Position: {x: 0, y: 0.15, z: -0.2}
+  Original_Gun_Position: {x: 0, y: 0, z: 0}
+  Original_Camera_Recoil_Position: {x: 0, y: 0, z: 0}
+  Gun_Ammo_Text: {fileID: 0}
+  Gun_Reloading_Text: {fileID: 0}
+--- !u!114 &1909391270622267999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627914615668722091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c26ccb926010b34787ec36ad2306da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Weapon_Clips_Available: 0
+  Bullets_Per_Ammo_Clip: 0
+  Current_Clip_Amount: 0
+  Current_Bullet_Amount_In_Clip: 0
+  Gun_Clip_Ammo_Text: {fileID: 0}
+  Gun_Script: {fileID: 0}
 --- !u!95 &6335043799291381069
 Animator:
   serializedVersion: 7
@@ -4735,11 +4778,24 @@ MonoBehaviour:
   Fire_Rate: 0.75
   Max_Ammo: 5
   Reload_Time: 2
+  Camera_Transform: {fileID: 0}
   Muzzle_Flash: {fileID: 3261050709596730357}
   animator: {fileID: 4424228322003623640}
   Ammo_Sprite_Object: {fileID: 0}
-  Bullet_Sprite_Objects: []
   Has_Ammo: 0
+  Player_Camera: {fileID: 0}
+  HUD_Cross_Hair: {fileID: 0}
+  Pistol_Cross_Hair: {fileID: 0}
+  MP5_Cross_Hair: {fileID: 0}
+  Shotgun_Cross_Hair: {fileID: 0}
+  Normal_FOV: 60
+  Zoom_FOV: 40
+  Recoil_Position: {x: 0, y: 0, z: -0.2}
+  Camera_Recoil_Position: {x: 0, y: 0.15, z: -0.2}
+  Original_Gun_Position: {x: 0, y: 0, z: 0}
+  Original_Camera_Recoil_Position: {x: 0, y: 0, z: 0}
+  Gun_Ammo_Text: {fileID: 0}
+  Gun_Reloading_Text: {fileID: 0}
 --- !u!95 &4424228322003623640
 Animator:
   serializedVersion: 7
@@ -8808,7 +8864,6 @@ GameObject:
   - component: {fileID: 3894474139472782709}
   - component: {fileID: 7493795605441040526}
   - component: {fileID: 5822295683453564850}
-  - component: {fileID: 1734972286560033206}
   m_Layer: 0
   m_Name: Flamethrower
   m_TagString: Untagged
@@ -8877,23 +8932,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1734972286560033206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6000024345879488647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1466ae93f4ee5840a7bc283ea2dc0f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage_Per_Second: 30
-  Active_Time: 5
-  Reload_Time: 3
-  Flamethrower_Particles: {fileID: 9173633751478632103}
-  animator: {fileID: 5822295683453564850}
 --- !u!1 &6062180399668224986
 GameObject:
   m_ObjectHideFlags: 0
@@ -9793,7 +9831,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3469270136150199164}
-  - component: {fileID: 5948583064700985571}
+  - component: {fileID: 1290018779872368347}
+  - component: {fileID: 532420399951907887}
   - component: {fileID: 5963232111541065805}
   m_Layer: 0
   m_Name: Machine_Gun
@@ -9820,7 +9859,7 @@ Transform:
   - {fileID: 4873796755000535775}
   m_Father: {fileID: 27411327136855627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5948583064700985571
+--- !u!114 &1290018779872368347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9829,20 +9868,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 6496693546457901500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f591b9bfd90ad3540a41c5c35d2f8edc, type: 3}
+  m_Script: {fileID: 11500000, guid: 119d72fc085f6884f93a527f5f14b9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 0
   Range: 100
-  Impact_Force: 35
-  Fire_Rate: 10
-  Max_Ammo: 35
+  Impact_Force: 30
+  Fire_Rate: 15
+  Max_Ammo: 0
   Reload_Time: 3
-  Muzzle_Flash: {fileID: 1915815355037597835}
-  animator: {fileID: 5963232111541065805}
+  Camera_Transform: {fileID: 0}
+  Muzzle_Flash: {fileID: 0}
+  animator: {fileID: 0}
   Ammo_Sprite_Object: {fileID: 0}
-  Bullet_Sprite_Objects: []
   Has_Ammo: 0
+  Player_Camera: {fileID: 0}
+  HUD_Cross_Hair: {fileID: 0}
+  MP5_Cross_Hair: {fileID: 0}
+  Normal_FOV: 60
+  Zoom_FOV: 40
+  Recoil_Position: {x: 0, y: 0, z: -0.2}
+  Camera_Recoil_Position: {x: 0, y: 0.15, z: -0.2}
+  Original_Gun_Position: {x: 0, y: 0, z: 0}
+  Original_Camera_Recoil_Position: {x: 0, y: 0, z: 0}
+  Gun_Ammo_Text: {fileID: 0}
+  Gun_Reloading_Text: {fileID: 0}
+--- !u!114 &532420399951907887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496693546457901500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1454d731e1450a44ab6253b6eb81d571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &5963232111541065805
 Animator:
   serializedVersion: 7

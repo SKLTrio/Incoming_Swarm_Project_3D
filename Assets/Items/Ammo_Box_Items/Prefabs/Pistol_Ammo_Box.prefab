@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 195509363261677050}
   - component: {fileID: 8643172064266804802}
-  - component: {fileID: 7629732017216971876}
+  - component: {fileID: 6626750575632949576}
   m_Layer: 0
   m_Name: Pistol_Ammo_Box
   m_TagString: Untagged
@@ -152,7 +152,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.85, z: 1.255}
   m_Center: {x: 0, y: 0.175, z: 0}
---- !u!114 &7629732017216971876
+--- !u!114 &6626750575632949576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,9 +161,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3051145928290905632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8972f876c9d51d34992cf99744c1dc15, type: 3}
+  m_Script: {fileID: 11500000, guid: cc98e733660764b4bb647d0171537209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pistol_Reload_Script: {fileID: 0}
 --- !u!1 &4101636133290416942
 GameObject:
   m_ObjectHideFlags: 0

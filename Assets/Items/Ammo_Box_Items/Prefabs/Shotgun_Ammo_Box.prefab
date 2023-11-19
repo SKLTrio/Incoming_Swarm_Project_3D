@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5938609907666728299}
   - component: {fileID: 9033003900403381348}
-  - component: {fileID: -6444666627641559784}
+  - component: {fileID: 6652084462505465422}
   m_Layer: 0
   m_Name: Shotgun_Ammo_Box
   m_TagString: Untagged
@@ -152,7 +152,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.85, z: 1.255}
   m_Center: {x: 0, y: 0.175, z: 0}
---- !u!114 &-6444666627641559784
+--- !u!114 &6652084462505465422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,9 +161,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4021601218339145871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8972f876c9d51d34992cf99744c1dc15, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bea874c7e90e9f4b939a008ab3be2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Shotgun_Reload_Script: {fileID: 0}
 --- !u!1 &4709131086010640616
 GameObject:
   m_ObjectHideFlags: 0

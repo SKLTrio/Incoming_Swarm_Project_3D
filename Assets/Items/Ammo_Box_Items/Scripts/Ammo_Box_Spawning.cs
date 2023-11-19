@@ -21,6 +21,9 @@ public class Ammo_Box_Spawning : MonoBehaviour
     [HideInInspector]
     public float Spawn_Z_Position;
 
+    [HideInInspector]
+    public List<Vector3> Ammo_Box_Already_Spawned_Points = new List<Vector3>();
+
     void Start()
     {
         StartCoroutine(Spawn_Ammo());
@@ -34,11 +37,21 @@ public class Ammo_Box_Spawning : MonoBehaviour
             {
                 Random_Position_And_Type();
 
+                while (Ammo_Box_Already_Spawned_Points.Contains(new Vector3(Spawn_X_Position, 0.35f, Spawn_Z_Position)))
+                {
+                    Random_Position_And_Type();
+                }
+
+                Ammo_Box_Already_Spawned_Points.Add(new Vector3(Spawn_X_Position, 0.35f, Spawn_Z_Position));
+
                 GameObject New_Ammo_Box = Instantiate(Ammo_Box_Type, new Vector3(Spawn_X_Position, 0.35f, Spawn_Z_Position), Quaternion.identity);
 
                 New_Ammo_Box.transform.parent = Parent_Object;
 
-                yield return new WaitForSeconds(Random.Range(15, 46));
+                Box_Spawning_Count++;
+
+                //yield return new WaitForSeconds(Random.Range(15, 46));
+                yield return new WaitForSeconds(Random.Range(5, 6));
             }
         }
     }

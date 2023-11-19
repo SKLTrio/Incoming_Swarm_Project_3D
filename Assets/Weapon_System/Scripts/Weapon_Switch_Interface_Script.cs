@@ -64,7 +64,6 @@ public class Weapon_Switch_Interface_Script : MonoBehaviour
                 Weapon.gameObject.SetActive(true);
                 Weapon_Images[i].SetActive(true);
                 Weapon_Ammo_Images[i].SetActive(true);
-                //Weapon.GetComponent<Gun_Script>().Set_Has_Ammo(true);
             }
 
             else
@@ -72,7 +71,6 @@ public class Weapon_Switch_Interface_Script : MonoBehaviour
                 Weapon.gameObject.SetActive(false);
                 Weapon_Images[i].SetActive(false);
                 Weapon_Ammo_Images[i].SetActive(false);
-                //Weapon.GetComponent<Gun_Script>().Set_Has_Ammo(false);
             }
 
             i++;

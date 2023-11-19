@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zombie_Strength: 5
-  Zombie_Attack_Distance: 3.5
+  Zombie_Attack_Distance: 4
   Zombie_Attack_Cooldown_Speed: 2
 --- !u!1 &8067626820384512222
 GameObject:

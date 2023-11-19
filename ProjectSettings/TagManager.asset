@@ -8,6 +8,10 @@ TagManager:
   - Zombie_Obstacle
   - Zombie
   - Zombie_Head
+  - Pistol
+  - MP5
+  - Shotgun
+  - Ammo_Box_Spawner
   layers:
   - Default
   - TransparentFX
