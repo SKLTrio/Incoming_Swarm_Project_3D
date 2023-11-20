@@ -352,6 +352,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2960098111793355109}
+  - component: {fileID: 7382695482815157299}
+  - component: {fileID: 4602889398753035549}
   m_Layer: 0
   m_Name: Health_Kit
   m_TagString: Untagged
@@ -379,6 +381,39 @@ Transform:
   - {fileID: 7900561997683200948}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7382695482815157299
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4686067746950780134}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.25, y: 0.5, z: 1}
+  m_Center: {x: 0.125, y: 0, z: 0}
+--- !u!114 &4602889398753035549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4686067746950780134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3d5a8b459a844459016b5265b65a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8426483737342495815
 GameObject:
   m_ObjectHideFlags: 0

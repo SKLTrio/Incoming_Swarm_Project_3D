@@ -22,6 +22,8 @@ public class Player_Locomotion : MonoBehaviour
     public bool Is_Grounded;
     private bool Is_Sprinting;
 
+    private Menu_Controller Menu_Controller_Script;
+
     public void On_Move(InputAction.CallbackContext Context)
     {
         Move_Direction = Context.ReadValue<Vector2>();
@@ -44,8 +46,11 @@ public class Player_Locomotion : MonoBehaviour
 
     public void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        GameObject Menu_Controller_Object = GameObject.FindWithTag("Menu_Controller");
+        Menu_Controller_Script = Menu_Controller_Object.GetComponent<Menu_Controller>();
+        Debug.Log(Menu_Controller_Script);
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     private void FixedUpdate()
@@ -56,7 +61,10 @@ public class Player_Locomotion : MonoBehaviour
 
     private void LateUpdate()
     {
-        Look();
+        if (!Menu_Controller_Script.Is_Game_Paused)
+        {
+            Look();
+        }
     }
 
     private void Move()

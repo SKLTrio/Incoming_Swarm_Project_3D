@@ -12,6 +12,8 @@ TagManager:
   - MP5
   - Shotgun
   - Ammo_Box_Spawner
+  - Health_Item_Spawner
+  - Menu_Controller
   layers:
   - Default
   - TransparentFX
