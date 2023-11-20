@@ -26,33 +26,26 @@ public class Ammo_Box_Spawning : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Spawn_Ammo());
+        InvokeRepeating("Spawn_Ammo", 0f, Random.Range(25, 46));
     }
 
-    IEnumerator Spawn_Ammo()
+    void Spawn_Ammo()
     {
-        while (Box_Spawning_Count < Max_Box_Spawn_Amount)
+        if (Box_Spawning_Count < Max_Box_Spawn_Amount && Ammo_Box_Spawning_Points != null && Ammo_Box_Spawning_Points.Count > 0)
         {
-            if (Ammo_Box_Spawning_Points != null && Ammo_Box_Spawning_Points.Count > 0)
+            Random_Position_And_Type();
+
+            while (Ammo_Box_Already_Spawned_Points.Contains(new Vector3(Spawn_X_Position, 0.35f, Spawn_Z_Position)))
             {
                 Random_Position_And_Type();
-
-                while (Ammo_Box_Already_Spawned_Points.Contains(new Vector3(Spawn_X_Position, 0.35f, Spawn_Z_Position)))
-                {
-                    Random_Position_And_Type();
-                }
-
-                Ammo_Box_Already_Spawned_Points.Add(new Vector3(Spawn_X_Position, 0.35f, Spawn_Z_Position));
-
-                GameObject New_Ammo_Box = Instantiate(Ammo_Box_Type, new Vector3(Spawn_X_Position, 0.35f, Spawn_Z_Position), Quaternion.identity);
-
-                New_Ammo_Box.transform.parent = Parent_Object;
-
-                Box_Spawning_Count++;
-
-                //yield return new WaitForSeconds(Random.Range(15, 46));
-                yield return new WaitForSeconds(Random.Range(5, 6));
             }
+
+            Ammo_Box_Already_Spawned_Points.Add(new Vector3(Spawn_X_Position, 0.35f, Spawn_Z_Position));
+
+            GameObject New_Ammo_Box = Instantiate(Ammo_Box_Type, new Vector3(Spawn_X_Position, 0.35f, Spawn_Z_Position), Quaternion.identity);
+            New_Ammo_Box.transform.parent = Parent_Object;
+
+            Box_Spawning_Count++;
         }
     }
 

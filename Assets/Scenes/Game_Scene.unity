@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 42931486}
   - component: {fileID: 42931487}
   m_Layer: 0
-  m_Name: Zombie_City_Spawner
+  m_Name: Zombie_Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -546,10 +546,25 @@ MonoBehaviour:
   - {x: -509, y: 0, z: 44}
   - {x: -335, y: 0, z: 74}
   - {x: -351, y: 0, z: 105}
+  - {x: -239, y: 0, z: 58}
+  - {x: -221, y: 0, z: 39}
+  - {x: -200, y: 0, z: -2.4}
+  - {x: -187, y: 0, z: 0}
+  - {x: -153, y: 0, z: -41}
+  - {x: -122, y: 0, z: -38}
+  - {x: -42, y: 0, z: -45}
+  - {x: -32, y: 0, z: 10}
+  - {x: -9, y: 0, z: 34}
+  - {x: 24, y: 0, z: 3}
+  - {x: 40, y: 0, z: -10}
+  - {x: 28, y: 0, z: -34}
+  - {x: 5, y: 0, z: -40}
+  - {x: -6.5, y: 0, z: -29}
+  - {x: 3, y: 0, z: 14}
   Spawn_X_Position: 0
   Spawn_Z_Position: 0
   Zombie_Type: {fileID: 0}
-  Max_Zombie_Count: 30
+  Max_Zombie_Count: 45
   Zombie_Count: 0
   Zombie_Group_Count: 0
 --- !u!1001 &45752732
@@ -1354,37 +1369,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 548140753131349566, guid: 0199a8ca7f7be0643aca9a9ab2ef0f16, type: 3}
   m_PrefabInstance: {fileID: 123494772}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &129813067
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 129813069}
-  m_Layer: 0
-  m_Name: Zombie_Countryside_Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &129813069
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129813067}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &130746137
 GameObject:
   m_ObjectHideFlags: 0
@@ -14602,6 +14586,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1321937883}
+  - {fileID: 965474018}
   - {fileID: 1816554339}
   - {fileID: 1988035416}
   m_Father: {fileID: 0}
@@ -16637,6 +16622,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12ce92caabc89c46bc064825f1d2f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &965474017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965474018}
+  m_Layer: 0
+  m_Name: Health_Items_Spawner
+  m_TagString: Ammo_Box_Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965474018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965474017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 812187600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &970175644
 GameObject:
   m_ObjectHideFlags: 0
@@ -26854,7 +26870,7 @@ Transform:
   m_GameObject: {fileID: 1722952586}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -398.4, y: 2.255, z: -17.96}
+  m_LocalPosition: {x: -398.4, y: 2.25, z: -17.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32294,7 +32310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7304097665698855045, guid: 7520016a817d68f4685d157d457ebed1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7304097665698855045, guid: 7520016a817d68f4685d157d457ebed1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32985,7 +33001,6 @@ SceneRoots:
   - {fileID: 1722952587}
   - {fileID: 1686063164}
   - {fileID: 42931486}
-  - {fileID: 129813069}
   - {fileID: 1165860260}
   - {fileID: 812187600}
   - {fileID: 1273786039}

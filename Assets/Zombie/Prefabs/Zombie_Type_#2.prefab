@@ -1029,7 +1029,7 @@ MonoBehaviour:
   Turn_Speed: 4.75
   Patrol_Radius: 35
   Chase_Radius: 15
-  Obstacle_Distance: 20
+  Obstacle_Distance: 35
 --- !u!114 &-841631341590856223
 MonoBehaviour:
   m_ObjectHideFlags: 0
