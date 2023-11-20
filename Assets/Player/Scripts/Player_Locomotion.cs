@@ -49,8 +49,8 @@ public class Player_Locomotion : MonoBehaviour
         GameObject Menu_Controller_Object = GameObject.FindWithTag("Menu_Controller");
         Menu_Controller_Script = Menu_Controller_Object.GetComponent<Menu_Controller>();
         Debug.Log(Menu_Controller_Script);
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void FixedUpdate()

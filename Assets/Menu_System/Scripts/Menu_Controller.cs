@@ -67,6 +67,7 @@ public class Menu_Controller : MonoBehaviour
     {
         Pause_Menu_Panel.SetActive(true);
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Is_Game_Paused = true;
         Time.timeScale = 0f;
     }
@@ -75,7 +76,7 @@ public class Menu_Controller : MonoBehaviour
     {
         Pause_Menu_Panel.SetActive(false);
         Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         Is_Game_Paused = false;
         Time.timeScale = 1f;
         
