@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         float Current_Time = Start_Timer_Seconds -= Time.deltaTime;
-        Debug.Log(UI_Manager_Script);
         UI_Manager_Script.Update_Time_UI(Current_Time);
     }
 }

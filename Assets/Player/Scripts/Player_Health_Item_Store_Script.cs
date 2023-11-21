@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class Player_Health_Item_Store_Script : MonoBehaviour
@@ -22,13 +23,16 @@ public class Player_Health_Item_Store_Script : MonoBehaviour
     public GameObject No_Health_Items_Text;
 
     [SerializeField]
+    public Image UI_Health_Image;
+
+    [SerializeField]
     public GameObject Player_Object;
 
     public void On_Use(InputAction.CallbackContext Context)
     {
         if (!Is_Item_On_Cooldown)
         {
-            StartCoroutine(Use_H_Item());
+            StartCoroutine(Use_Health_Item());
         }
     }
 
@@ -43,7 +47,7 @@ public class Player_Health_Item_Store_Script : MonoBehaviour
         Health_Item_Count_Text.text = "x " + Health_Item_Count.ToString(); 
     }
 
-    IEnumerator Use_H_Item()
+    IEnumerator Use_Health_Item()
     {
         Is_Item_On_Cooldown = true;
 
@@ -59,6 +63,7 @@ public class Player_Health_Item_Store_Script : MonoBehaviour
                 if (Player_Health_Script != null)
                 {
                     Player_Health_Script.Health += Health_Boost;
+                    StartCoroutine(Set_Health_Add_Panel());
                     if (Player_Health_Script.Health > 100)
                     {
                         Player_Health_Script.Health = Player_Health_Script.Max_Health;
@@ -100,5 +105,38 @@ public class Player_Health_Item_Store_Script : MonoBehaviour
         No_Health_Items_Text.SetActive(true);
         yield return new WaitForSeconds(1f);
         No_Health_Items_Text.SetActive(false);
+    }
+
+    IEnumerator Set_Health_Add_Panel()
+    {
+        if (UI_Health_Image != null)
+        {
+            float Image_Alpha;
+
+            for (Image_Alpha = 0f; Image_Alpha <= 0.1f; Image_Alpha += 0.01f)
+            {
+                Color Current_Image_Colour = UI_Health_Image.color;
+                Current_Image_Colour.a = Image_Alpha;
+                UI_Health_Image.color = Current_Image_Colour;
+
+                yield return new WaitForSeconds(0.05f);
+            }
+
+            yield return new WaitForSeconds(.75f);
+
+            for (Image_Alpha = 0.1f; Image_Alpha >= 0f; Image_Alpha -= 0.01f)
+            {
+                Color Current_Image_Colour = UI_Health_Image.color;
+                Current_Image_Colour.a = Image_Alpha;
+                UI_Health_Image.color = Current_Image_Colour;
+
+                yield return new WaitForSeconds(0.05f);
+            }
+        }
+
+        else
+        {
+            Debug.Log("Image Component not found!");
+        }
     }
 }

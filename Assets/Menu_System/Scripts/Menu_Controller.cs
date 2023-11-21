@@ -58,11 +58,6 @@ public class Menu_Controller : MonoBehaviour
         }
     }
 
-    public void Pause_Menu()
-    {
-        
-    }
-
     public void Pause_Game()
     {
         Pause_Menu_Panel.SetActive(true);
