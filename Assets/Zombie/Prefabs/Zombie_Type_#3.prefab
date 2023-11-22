@@ -637,6 +637,7 @@ GameObject:
   - component: {fileID: 8877242968963268920}
   - component: {fileID: -4276595985907269679}
   - component: {fileID: -3446360459555994362}
+  - component: {fileID: 1701035624947664678}
   m_Layer: 0
   m_Name: Zombie_Type_#3
   m_TagString: Zombie
@@ -722,10 +723,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Patrol_Speed: 3.5
-  Chase_Speed: 7.5
+  Chase_Speed: 8.5
   Turn_Speed: 5
   Patrol_Radius: 35
-  Chase_Radius: 15
+  Chase_Radius: 25
   Obstacle_Distance: 35
 --- !u!114 &-4276595985907269679
 MonoBehaviour:
@@ -756,9 +757,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c893e3b76f3d572439d55f05414bd277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Zombie_Strength: 2
+  Zombie_Strength: 10
   Zombie_Attack_Distance: 3
   Zombie_Attack_Cooldown_Speed: 2
+--- !u!95 &1701035624947664678
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977827178459695531}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0778ec16501b5e140ab3f4259f2fdd03, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5722098857145785018
 GameObject:
   m_ObjectHideFlags: 0

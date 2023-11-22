@@ -940,6 +940,7 @@ GameObject:
   - component: {fileID: -8038326059632297859}
   - component: {fileID: -6063615679903728236}
   - component: {fileID: 7444219206748180685}
+  - component: {fileID: 5119416553631344973}
   m_Layer: 0
   m_Name: Zombie_Type_#1
   m_TagString: Zombie
@@ -1059,9 +1060,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c893e3b76f3d572439d55f05414bd277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Zombie_Strength: 5
+  Zombie_Strength: 20
   Zombie_Attack_Distance: 4
   Zombie_Attack_Cooldown_Speed: 2
+--- !u!95 &5119416553631344973
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024908985723269520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24753cab0b2147845b8727c31fb65c7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8067626820384512222
 GameObject:
   m_ObjectHideFlags: 0

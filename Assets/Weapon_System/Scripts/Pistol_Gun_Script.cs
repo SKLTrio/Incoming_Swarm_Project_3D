@@ -23,6 +23,8 @@ public class Pistol_Gun_Script : MonoBehaviour
 
     public ParticleSystem Muzzle_Flash;
 
+    public ParticleSystem Zoom_Muzzle_Flash;
+
     private float Next_Time_To_Fire = 0f;
 
     public Animator animator;
@@ -164,7 +166,15 @@ public class Pistol_Gun_Script : MonoBehaviour
             return;
         }
 
-        Muzzle_Flash.Play();
+        if (Is_Zoom_Enabled)
+        {
+            Zoom_Muzzle_Flash.Play();
+        }
+        else
+        {
+            Muzzle_Flash.Play();
+        }
+
         RaycastHit Hit_Info;
 
         Vector3 Ray_Start_Point = Camera_Transform.position + Camera_Transform.forward * 1.5f;

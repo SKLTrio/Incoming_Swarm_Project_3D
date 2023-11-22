@@ -26,5 +26,14 @@ public class GameManager : MonoBehaviour
     {
         float Current_Time = Start_Timer_Seconds -= Time.deltaTime;
         UI_Manager_Script.Update_Time_UI(Current_Time);
+
+        if (Current_Time <= 0)
+        {
+            Time.timeScale = 0f;
+            
+        }
+
     }
+
+
 }
