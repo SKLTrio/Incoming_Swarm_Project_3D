@@ -22,6 +22,7 @@ public class Player_Locomotion : MonoBehaviour
     public bool Is_Grounded;
     private bool Is_Sprinting;
 
+    public GameManager Game_Manager;
     private Menu_Controller Menu_Controller_Script;
 
     public void On_Move(InputAction.CallbackContext Context)
@@ -63,7 +64,10 @@ public class Player_Locomotion : MonoBehaviour
     {
         if (!Menu_Controller_Script.Is_Game_Paused)
         {
-            Look();
+            if (Game_Manager.Is_Win == false)
+            {
+                Look();
+            }
         }
     }
 

@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public Menu_Controller Menu_Controller_Script;
     public UI_Manager UI_Manager_Script;
 
-    private float Start_Timer_Seconds = 600f;
-    private float End_Time;
+    private float Start_Timer_Seconds = 10f; //600f;
+    public bool Is_Win = false;
+
+    public float Current_Time;
 
     private void Awake()
     {
@@ -19,18 +21,19 @@ public class GameManager : MonoBehaviour
             Destroy(this);
             return;
         }
+
         Instance = this;
     }
 
     private void Update()
     {
-        float Current_Time = Start_Timer_Seconds -= Time.deltaTime;
+        Current_Time = Start_Timer_Seconds -= Time.deltaTime;
         UI_Manager_Script.Update_Time_UI(Current_Time);
 
         if (Current_Time <= 0)
         {
-            Time.timeScale = 0f;
-            
+            Is_Win = true;
+            Menu_Controller_Script.Open_Win_Panel();
         }
 
     }

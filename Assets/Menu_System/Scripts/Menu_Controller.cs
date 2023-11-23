@@ -7,34 +7,37 @@ using UnityEngine.SceneManagement;
 public class Menu_Controller : MonoBehaviour
 {
     [SerializeField]
-    string Start_Scene;
+    public string Start_Scene;
 
     [SerializeField]
-    string Game_Scene;
+    public string Game_Scene;
 
     [SerializeField]
-    GameObject Pause_Menu_Panel;
+    public GameObject Pause_Menu_Panel;
 
     [SerializeField]
-    GameObject How_To_Play_Menu_Main;
+    public GameObject How_To_Play_Menu_Main;
 
     [SerializeField]
-    GameObject How_To_Play_Menu_Secondary;
+    public GameObject How_To_Play_Menu_Secondary;
 
     [SerializeField]
-    GameObject How_To_Play_Menu_Third;
+    public GameObject How_To_Play_Menu_Third;
 
     [SerializeField]
-    GameObject How_To_Play_Menu_Fourth;
+    public GameObject How_To_Play_Menu_Fourth;
 
     [SerializeField]
-    GameObject Control_Menu_Main;
+    public GameObject Control_Menu_Main;
 
     [SerializeField]
-    GameObject Control_Menu_Secondary;
+    public GameObject Control_Menu_Secondary;
 
     [SerializeField]
-    bool Is_Pause_Menu_Available = false;
+    public GameObject Win_Panel;
+
+    [SerializeField]
+    public bool Is_Pause_Menu_Available = false;
 
     [SerializeField]
     public bool Is_Game_Paused = false;
@@ -155,5 +158,27 @@ public class Menu_Controller : MonoBehaviour
     public void Close_Control_Menu_Secondary()
     {
         Control_Menu_Secondary.SetActive(false);
+    }
+
+    public void Open_Death_Panel()
+    {
+
+    }
+
+    public void Close_Death_Panel()
+    {
+
+    }
+
+    public void Open_Win_Panel()
+    {
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Win_Panel.SetActive(true);
+    }
+    public void Close_Win_Panel()
+    {
+
     }
 }

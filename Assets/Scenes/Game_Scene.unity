@@ -14890,6 +14890,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu_Controller_Script: {fileID: 1465620772}
   UI_Manager_Script: {fileID: 826793635}
+  Is_Win: 0
+  Current_Time: 0
 --- !u!1 &833613664
 GameObject:
   m_ObjectHideFlags: 0
@@ -24524,6 +24526,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4, type: 3}
   m_PrefabInstance: {fileID: 1152541467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1152978211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152978212}
+  - component: {fileID: 1152978214}
+  - component: {fileID: 1152978213}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1152978212
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152978211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1273786042}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1152978213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152978211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1152978214
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152978211}
+  m_CullTransparentMesh: 1
 --- !u!1 &1159396199
 GameObject:
   m_ObjectHideFlags: 0
@@ -26541,13 +26618,20 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7958489654583433377, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8415334716600428960, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1465620772}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3609174507680102317, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1152978212}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
 --- !u!114 &1273786040 stripped
@@ -26561,6 +26645,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1273786041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7958489654583433377, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+  m_PrefabInstance: {fileID: 1273786039}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1273786042 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3609174507680102317, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+  m_PrefabInstance: {fileID: 1273786039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1276832787
 GameObject:
   m_ObjectHideFlags: 0
@@ -29600,6 +29694,7 @@ MonoBehaviour:
   How_To_Play_Menu_Fourth: {fileID: 0}
   Control_Menu_Main: {fileID: 0}
   Control_Menu_Secondary: {fileID: 0}
+  Win_Panel: {fileID: 1273786041}
   Is_Pause_Menu_Available: 1
   Is_Game_Paused: 0
 --- !u!1 &1469116612
@@ -36943,6 +37038,7 @@ MonoBehaviour:
   Gravity: 10
   Max_Force: 1
   Is_Grounded: 0
+  Game_Manager: {fileID: 826793636}
 --- !u!54 &1722952589
 Rigidbody:
   m_ObjectHideFlags: 0
