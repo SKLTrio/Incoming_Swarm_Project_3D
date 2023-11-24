@@ -61,6 +61,12 @@ public class Pistol_Gun_Script : MonoBehaviour
     [SerializeField]
     Pistol_Reload_Script Pistol_Reload_Script;
 
+    [SerializeField]
+    GameManager Game_Manager;
+
+    [SerializeField]
+    Menu_Controller Menu_Controller_Script;
+
     public void On_Zoom(InputAction.CallbackContext Context)
     {
         if (Context.started)
@@ -116,8 +122,17 @@ public class Pistol_Gun_Script : MonoBehaviour
 
         if (Mouse.current.leftButton.isPressed && Time.time >= Next_Time_To_Fire)
         {
-            Next_Time_To_Fire = Time.time + 1f / Fire_Rate;
-            Shoot();
+            if (Game_Manager.Is_Win == false)
+            {
+                if (Menu_Controller_Script.Is_Dead == false)
+                {
+                    if (Menu_Controller_Script.Is_Game_Paused == false)
+                    {
+                        Next_Time_To_Fire = Time.time + 1f / Fire_Rate;
+                        Shoot();
+                    }
+                }
+            }
         }
     }
 

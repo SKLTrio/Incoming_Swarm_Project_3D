@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public Menu_Controller Menu_Controller_Script;
     public UI_Manager UI_Manager_Script;
 
-    private float Start_Timer_Seconds = 10f; //600f;
+    private float Start_Timer_Seconds = 300f;
     public bool Is_Win = false;
 
     public float Current_Time;

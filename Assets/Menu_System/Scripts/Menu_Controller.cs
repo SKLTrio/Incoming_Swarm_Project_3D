@@ -37,10 +37,22 @@ public class Menu_Controller : MonoBehaviour
     public GameObject Win_Panel;
 
     [SerializeField]
+    public GameObject Death_Panel;
+
+    [SerializeField]
     public bool Is_Pause_Menu_Available = false;
 
     [SerializeField]
     public bool Is_Game_Paused = false;
+
+    [SerializeField]
+    public bool Is_Dead = false;
+
+    [SerializeField]
+    public GameObject HUD;
+
+    [SerializeField]
+    public GameManager Game_Manager;
 
     public void Update()
     {
@@ -89,6 +101,7 @@ public class Menu_Controller : MonoBehaviour
     public void Start_Game()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        HUD.SetActive(true);
         Cursor.visible = false;
         SceneManager.LoadScene(Game_Scene);
         Time.timeScale = 1f;
@@ -162,23 +175,20 @@ public class Menu_Controller : MonoBehaviour
 
     public void Open_Death_Panel()
     {
-
-    }
-
-    public void Close_Death_Panel()
-    {
-
+        Time.timeScale = 0f;
+        Is_Dead = true;
+        HUD.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Death_Panel.SetActive(true);
     }
 
     public void Open_Win_Panel()
     {
         Time.timeScale = 0f;
+        HUD.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Win_Panel.SetActive(true);
-    }
-    public void Close_Win_Panel()
-    {
-
     }
 }

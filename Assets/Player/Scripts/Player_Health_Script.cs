@@ -14,6 +14,9 @@ public class Player_Health_Script : MonoBehaviour
     public Image UI_Damage_Image;
     public GameObject UI_Blood_Splatter_Image;
 
+    [SerializeField]
+    public Menu_Controller Menu_Controller_Script;
+
     void Start()
     {
         Health = Max_Health;
@@ -95,10 +98,8 @@ public class Player_Health_Script : MonoBehaviour
 
     public void On_Death()
     {
-        UnityEngine.Debug.Log("GAME OVER - YOU DIED");
-        //GameManager.Instance.GameOver();
-        //DeathPanel.SetActive(true);
-        //Cursor.visible = true;
+        Debug.Log("GAME OVER - YOU DIED");
+        Menu_Controller_Script.Open_Death_Panel();
     }
 
 }

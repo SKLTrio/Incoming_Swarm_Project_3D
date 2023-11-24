@@ -7,14 +7,23 @@ public class Menu_Background_Flickering_Script : MonoBehaviour
     [SerializeField]
     public List<GameObject> Light_Game_Objects = new List<GameObject>();
 
-    private void Start()
+    private bool Is_True;
+
+    private void OnEnable()
     {
+        Is_True = true;
         StartCoroutine(Flickering_Lights());
+    }
+
+    private void OnDisable()
+    {
+        Is_True = false;
+        StopAllCoroutines();
     }
 
     private IEnumerator Flickering_Lights()
     {
-        while (true)
+        while (Is_True)
         {
             GameObject Random_Light_Choice_1 = Light_Game_Objects[Random.Range(0, Light_Game_Objects.Count)];
             GameObject Random_Light_Choice_2 = Light_Game_Objects[Random.Range(0, Light_Game_Objects.Count)];
@@ -70,8 +79,6 @@ public class Menu_Background_Flickering_Script : MonoBehaviour
             }
 
             yield return new WaitForSeconds(.5f);
-
         }
     }
-
 }

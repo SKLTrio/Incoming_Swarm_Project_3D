@@ -8,6 +8,12 @@ public class Weapon_Switch_Interface_Script : MonoBehaviour
     public GameObject[] Weapon_Images;
     public GameObject[] Weapon_Ammo_Images;
 
+    [SerializeField]
+    public GameManager Game_Manager;
+
+    [SerializeField]
+    public Menu_Controller Menu_Controller_Script;
+
     void Start()
     {
         Select_Weapon();
@@ -15,41 +21,49 @@ public class Weapon_Switch_Interface_Script : MonoBehaviour
 
     void Update()
     {
-        int Previously_Selected_Weapon = Selected_Weapon;
-
-        float Scroll_Wheel_Value = Input.mouseScrollDelta.y;
-
-        if (Scroll_Wheel_Value < 0f)
+        if (Game_Manager.Is_Win == false)
         {
-            if (Selected_Weapon >= transform.childCount - 1)
+            if (Menu_Controller_Script.Is_Dead == false)
             {
-                Selected_Weapon = 0;
-            }
+                if (Menu_Controller_Script.Is_Game_Paused == false)
+                {
+                    int Previously_Selected_Weapon = Selected_Weapon;
 
-            else
-            {
-                Selected_Weapon++;
+                    float Scroll_Wheel_Value = Input.mouseScrollDelta.y;
+
+                    if (Scroll_Wheel_Value < 0f)
+                    {
+                        if (Selected_Weapon >= transform.childCount - 1)
+                        {
+                            Selected_Weapon = 0;
+                        }
+
+                        else
+                        {
+                            Selected_Weapon++;
+                        }
+                    }
+
+                    if (Scroll_Wheel_Value > 0f)
+                    {
+                        if (Selected_Weapon <= 0)
+                        {
+                            Selected_Weapon = transform.childCount - 1;
+                        }
+
+                        else
+                        {
+                            Selected_Weapon--;
+                        }
+                    }
+
+                    if (Previously_Selected_Weapon != Selected_Weapon)
+                    {
+                        Select_Weapon();
+                    }
+                }
             }
         }
-
-        if (Scroll_Wheel_Value > 0f)
-        {
-            if (Selected_Weapon <= 0)
-            {
-                Selected_Weapon = transform.childCount - 1;
-            }
-
-            else
-            {
-                Selected_Weapon--;
-            }
-        }
-
-        if (Previously_Selected_Weapon != Selected_Weapon)
-        {
-            Select_Weapon();
-        }
-
     }
 
     void Select_Weapon()

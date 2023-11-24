@@ -61,6 +61,12 @@ public class MP5_Gun_Script : MonoBehaviour
     [SerializeField]
     MP5_Reload_Script MP5_Reload_Script;
 
+    [SerializeField]
+    GameManager Game_Manager;
+
+    [SerializeField]
+    Menu_Controller Menu_Controller_Script;
+
     public void On_Zoom(InputAction.CallbackContext Context)
     {
         if (Context.started)
@@ -116,9 +122,18 @@ public class MP5_Gun_Script : MonoBehaviour
 
         if (Mouse.current.leftButton.isPressed && Time.time >= Next_Time_To_Fire)
         {
-            Next_Time_To_Fire = Time.time + 1f / Fire_Rate;
-            Shoot();
-            StartCoroutine(Add_Recoil());
+            if (Game_Manager.Is_Win == false)
+            {
+                if (Menu_Controller_Script.Is_Dead == false)
+                {
+                    if (Menu_Controller_Script.Is_Game_Paused == false)
+                    {
+                        Next_Time_To_Fire = Time.time + 1f / Fire_Rate;
+                        Shoot();
+                        StartCoroutine(Add_Recoil());
+                    }
+                }
+            }
         }
     }
 

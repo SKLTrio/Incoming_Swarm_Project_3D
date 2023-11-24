@@ -47,6 +47,7 @@ public class Player_Locomotion : MonoBehaviour
 
     public void Start()
     {
+        Time.timeScale = 1.0f;
         GameObject Menu_Controller_Object = GameObject.FindWithTag("Menu_Controller");
         Menu_Controller_Script = Menu_Controller_Object.GetComponent<Menu_Controller>();
         Debug.Log(Menu_Controller_Script);
@@ -66,7 +67,10 @@ public class Player_Locomotion : MonoBehaviour
         {
             if (Game_Manager.Is_Win == false)
             {
-                Look();
+                if (Menu_Controller_Script.Is_Dead == false)
+                {
+                    Look();
+                }
             }
         }
     }
