@@ -26,7 +26,7 @@ public class Health_Item_Spawning : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("Spawn_Health_Item", 0f, Random.Range(25, 46));
+        InvokeRepeating("Spawn_Health_Item", 0f, Random.Range(20, 30));
     }
 
     void Spawn_Health_Item()

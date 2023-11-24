@@ -26,7 +26,7 @@ public class Ammo_Box_Spawning : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("Spawn_Ammo", 0f, Random.Range(25, 46));
+        InvokeRepeating("Spawn_Ammo", 0f, Random.Range(15, 20));
     }
 
     void Spawn_Ammo()
