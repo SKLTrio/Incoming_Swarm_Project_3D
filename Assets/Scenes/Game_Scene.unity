@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.015
+  m_FogDensity: 0.0075
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
@@ -15474,7 +15474,6 @@ MonoBehaviour:
   UI_Manager_Script: {fileID: 826793635}
   Is_Win: 0
   Current_Time: 0
-  Is_Game_Scene: 1
 --- !u!1 &833613664
 GameObject:
   m_ObjectHideFlags: 0
@@ -27780,7 +27779,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1921395034372347453, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491315390616121020, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
+      propertyPath: m_text
+      value: 05:00
       objectReference: {fileID: 0}
     - target: {fileID: 4063755479062870298, guid: 96c02b9cebe2fee4fa1992f86a6a9bf0, type: 3}
       propertyPath: m_AnchorMax.x
