@@ -5781,12 +5781,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description_Splash_Text: {fileID: 283394594}
   Description_Splash_Text_List:
-  - Wow! I didn't think you would survive!
-  - Well done! You survived long enough that help arrived!
-  - Took you long enough!
-  - At least you had ammo... right?
-  - Wow those zombies run fast!
-  - You didn't get bit, did you?
+  - You survived long enough that help arrived!
+  - Well Done!
+  - Great Job!
+  - You Survived!
 --- !u!1001 &499958141
 PrefabInstance:
   m_ObjectHideFlags: 0
